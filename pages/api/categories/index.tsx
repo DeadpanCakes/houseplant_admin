@@ -8,6 +8,7 @@ const handler = (req, res) => {
 };
 
 const get = async (req, res) => {
+  console.log("reached");
   const DEV_API = process.env.DEV_API;
   const categories = await fetch(
     (DEV_API || process.env.PROD_API) + "/categories"
