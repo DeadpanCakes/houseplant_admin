@@ -4,13 +4,22 @@ import LabeledInput from "../../components/LabeledInput";
 const Category = (props) => {
   const category = JSON.parse(props.category);
   const nameState = useState(category.name);
+  const [name] = nameState;
   const descriptionState = useState(category.description);
+  const [description] = descriptionState;
+  const submitHandler = () => console.log({ name, description });
   return (
     <>
       <h1>Category {category._id}</h1>
-      <form>
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          submitHandler();
+        }}
+      >
         <LabeledInput fieldName="Name" state={nameState} />
         <LabeledInput fieldName="Description" state={descriptionState} />
+        <button>Submit</button>
       </form>
     </>
   );
