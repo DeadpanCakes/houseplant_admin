@@ -3,8 +3,10 @@ const Category = (props) => {
   return <h1>Category {category._id}</h1>;
 };
 
-export const getServerSideProps = (context) => {
-  const category = { _id: context.params.id };
+export const getServerSideProps = async (context) => {
+  const { category } = await fetch(
+    process.env.LOCAL_API + "/categories/" + context.params.id
+  ).then((res) => res.json());
   return { props: { category: JSON.stringify(category) } };
 };
 
