@@ -1,27 +1,16 @@
 import { useState } from "react";
+import LabeledInput from "../../components/LabeledInput";
 
 const Category = (props) => {
   const category = JSON.parse(props.category);
-  const [name, setName] = useState(category.name);
-  const [description, setDescription] = useState(category.description);
+  const nameState = useState(category.name);
+  const descriptionState = useState(category.description);
   return (
     <>
       <h1>Category {category._id}</h1>
       <form>
-        <label>Name</label>
-        <input
-          value={name}
-          onChange={(e) => {
-            return setName(e.target.value);
-          }}
-        />
-        <label>Description</label>
-        <input
-          value={description}
-          onChange={(e) => {
-            return setDescription(e.target.value);
-          }}
-        />
+        <LabeledInput fieldName="Name" state={nameState} />
+        <LabeledInput fieldName="Description" state={descriptionState} />
       </form>
     </>
   );
