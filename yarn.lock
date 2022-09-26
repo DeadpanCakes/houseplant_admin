@@ -116,6 +116,11 @@
   "resolved" "https://registry.npmjs.org/@types/json5/-/json5-0.0.29.tgz"
   "version" "0.0.29"
 
+"@types/node@^18.7.23":
+  "integrity" "sha512-DWNcCHolDq0ZKGizjx2DZjR/PqsYwAcYUJmfMWqtVU2MBMG5Mo+xFZrhGId5r/O5HOuMPyQEcM6KUBp5lBZZBg=="
+  "resolved" "https://registry.npmjs.org/@types/node/-/node-18.7.23.tgz"
+  "version" "18.7.23"
+
 "@typescript-eslint/parser@^5.21.0":
   "integrity" "sha512-LDqxZBVFFQnQRz9rUZJhLmox+Ep5kdUmLatLQnCRR6523YV+XhRjfYzStQ4MheFA8kMAfUlclHSbu+RKdRwQKw=="
   "resolved" "https://registry.npmjs.org/@typescript-eslint/parser/-/parser-5.38.1.tgz"
