@@ -18,6 +18,23 @@ const Product = (props) => {
     })
   );
   const isPublishedState = useState(product.isPublished);
+
+  const handleSubmit = async () => {
+    const body = {
+      name: nameState[0],
+      description: descriptionState[0],
+      stock: stockState[0],
+      price: priceState[0],
+      discount: discountState[0],
+      categories: categoriesState[0],
+      isPublished: isPublishedState[0],
+    };
+    const options = {
+      body: JSON.stringify(body),
+      method: "PUT",
+    };
+    return await fetch(`/api/products/${product._id}`, options);
+  };
   return (
     <>
       <h1>Product {product._id}</h1>
@@ -33,6 +50,7 @@ const Product = (props) => {
         <CounterInput fieldName={"Discount"} state={discountState} />
         <CategoryList categoriesState={categoriesState} />
         <BooleanInput fieldName={"Is Published"} state={isPublishedState} />
+        <button onClick={handleSubmit}>Submit Changes</button>
       </form>
     </>
   );
